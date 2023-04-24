@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="webjars/bootstrap/5.2.3/css/bootstrap.min.css">
 </head>
 <body>
-$END$
+<div class="container mt-2">
+     <div class="card">
+         <div class="card-header">Listes des Patients</div>
+         <div class="card-bodyd">
+             <table class="table">
+                 <thead>
+                 <tr>
+                     <th>ID</th>
+                     <th>Nom</th>
+                     <th>Date</th>
+                     <th>Malade</th>
+                     <th>Score</th>
+                 </tr>
+                 </thead>
+                 <tbody>
+                 <tr th:each="p:${ListPatients}">
+                     <td th:text="${p.id}"></td>
+                     <td th:text="${p.nom}"></td>
+                     <td th:text="${p.dateNaissance}"></td>
+                     <td th:text="${p.malade}"></td>
+                     <td th:text="${p.score}"></td>
+
+                 </tr>
+                 </tbody>
+             </table>
+         </div>
+     </div>
+</div>
+
+
 </body>
 </html>
